@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title><!--Titulo de la pagina-->
+    <link rel="stylesheet" href="formulario.css"><!--referencia al documento css de estilos-->
+
+</head>
+<body>
+    <div id="overlay-reg" class="overlay-reg active">
+        <div id="container-reg" class="container-reg active">
+            <a id="close-reg" class="close-reg"><i class="fas fa-times"></i></a>
+            <h3>Formulario De Registro</h3>
+            <!--Abrimos primero el formulario con la etiqueta, luego de esto creamos divisiones para las celdas
+            de registro-->
+            <form action="../registrado/inicio/home.html"  method="post" class="form-registrer" onsubmit="return formulario();">  
+                <!--Creamos la division "inputs_regs", la cual va a ser todo el cuadro del registro y dentro
+                de este div creamos dos columnas, la primera para el registro de, nombre, correo electronico
+                y contraseña; la segunda colum2 va a ser de apellidos, telefono, ademas de una celda mas para confimar, que
+                la contraseña coincida, tambien en la segunda columna va a estar el botón que va entregar el registro(submit)-->
+                <div class="inputs-reg">
+                    <div class="colum1">
+                        <label for="names">Nombre:</label>
+                        <input type="text" name="names" id="nombre" required >
+                        <label for="mail-reg">Correo Electrónico:</label>
+                        <input type="email" name="mail-reg" id="correo" required >
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" minlength="8" id="clave" required>
+                    </div><!--Se cierra el div de la columna 1-->
+                    <div class="colum2">
+                        <label for="lasts">Apellidos:</label>
+                        <input type="text" class="lasts" name="lasts" id="apellidos" required>
+                        <label for="cell">Teléfono:</label>
+                        <input type="tel" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/ name="cell" id="telefono" maxlength="10" minlength="9" required>
+                        <label for="c-password">Confirmar Contraseña:</label>
+                        <input type="password" name="c-password" id="confclave" required>
+                        <input type="submit" class="btn-register" value="Registrarme">
+                    </div><!--Se cierra el div de la columna 2-->
+                </div><!--Se cierra el div de las dos columnas donde contiene toda la tabla del registro-->
+            </form><!--Se cierra la etiqueta que contiene el formulario-->
+        </div>
+    </div>
+</body>
+<script src="formulario.js"></script><!--Llama al archivo de JavaScript-->
+</html>
